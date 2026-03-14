@@ -1,21 +1,5 @@
-import { useEffect, useState } from "react"
+import Login from "./Pages/login";
 
-function App() {
+const Index = () => <Login />;
 
-  const [data,setData] = useState("")
-
-  useEffect(()=>{
-    fetch("http://localhost:5000/api/parking")
-    .then(res => res.json())
-    .then(data => setData(data.message))
-  },[])
-
-  return (
-    <>
-      <h1>AI Parking Management System</h1>
-      <h2>{data}</h2>
-    </>
-  )
-}
-
-export default App
+export default Index;

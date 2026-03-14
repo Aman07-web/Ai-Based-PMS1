@@ -1,23 +1,21 @@
-const express = require("express")
-const cors = require("cors")
+import { useEffect, useState } from "react"
 
-const app = express()
+function App() {
 
-app.use(cors())
-app.use(express.json())
+  const [data,setData] = useState("")
 
-app.get("/", (req, res) => {
-    res.send("Backend running")
-})
+  useEffect(()=>{
+    fetch("http://localhost:5000/api/parking")
+    .then(res => res.json())
+    .then(data => setData(data.message))
+  },[])
 
-app.get("/api/parking", (req, res) => {
-    res.json({
-        message: "Parking API working"
-    })
-})
+  return (
+    <>
+      <h1>AI Parking Management System</h1>
+      <h2>{data}</h2>
+    </>
+  )
+}
 
-const PORT = 5000
-
-app.listen(PORT, () => {
-    console.log(`Server running on ${PORT}`)
-})
+export default App
