@@ -1,5 +1,6 @@
 import Login from "./Pages/login";
+import SecureIdRegistration from "./Pages/SignUp"
 
-const Index = () => <Login />;
+const Index = () => <SecureIdRegistration />;
 
 export default Index;
