@@ -80,25 +80,27 @@ const SecureIdRegistration = () => {
       'Complete',
     ];
     return (
-      <div className="flex justify-between mb-8 px-2">
-        {steps.map((label, idx) => (
-          <div key={idx} className="flex flex-col items-center flex-1">
-            <div
-              className={`w-8 h-8 rounded-full flex items-center justify text-sm font-bold mb-1 ${
-                idx + 1 < step
-                  ? 'bg-green-500 text-white'
-                  : idx + 1 === step
-                  ? 'bg-indigo-500 text-white ring-2 ring-indigo-300'
-                  : 'bg-gray-700 text-gray-400'
-              }`}
-            >
-              {idx + 1 < step ? '✓' : idx + 1}
-            </div>
-            <span className="text-xs text-gray-400 hidden md:block">{label}</span>
-          </div>
-        ))}
+  <div className="flex justify-center items-center mb-8 px-2 max-w-2xl mx-auto">
+    {steps.map((label, idx) => (
+      <div key={idx} className="flex flex-col items-center mx-2 first:ml-0 last:mr-0">
+        <div
+          className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold mb-2 ${
+            idx + 1 < step
+              ? 'bg-green-500 text-white'
+              : idx + 1 === step
+              ? 'bg-indigo-500 text-white ring-2 ring-indigo-300'
+              : 'bg-gray-700 text-gray-400'
+          }`}
+        >
+          {idx + 1 < step ? '✓' : idx + 1}
+        </div>
+        <span className="text-xs text-gray-400 text-center hidden md:block whitespace-nowrap">
+          {label}
+        </span>
       </div>
-    );
+    ))}
+  </div>
+);
   };
 
   return (
