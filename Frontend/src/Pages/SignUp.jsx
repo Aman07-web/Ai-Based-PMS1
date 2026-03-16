@@ -167,7 +167,7 @@ const SecureIdRegistration = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-400 mb-2">
-                      First Name
+                      First Name 
                     </label>
                     <input
                       type="text"
